@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Ch7StudioFunWithQuestions
 {
-    internal class Quiz
+    public class Quiz
     {
+
+
+
     }
 }
