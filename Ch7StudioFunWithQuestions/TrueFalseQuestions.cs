@@ -15,11 +15,13 @@ namespace Ch7StudioFunWithQuestions
         public override string AnswerChoiceC { get; set; }
         public override string AnswerChoiceD { get; set; }
         public override string Answer { get; set; }
-
+        
 
         public TrueFalseQuestions(string stateQuestion, string answerChoiceA, string answerChoiceB, string answerChoiceC, string answerChoiceD, string answer) : base(stateQuestion, answerChoiceA, answerChoiceB, answerChoiceC, answerChoiceD, answer)
         {
         }
+        
+
         public static int RunProgram(int score)
         {
             TrueFalseQuestions TFQuestion1 = new("The sum of one and one is two.", "True", "False", "", "", "A");

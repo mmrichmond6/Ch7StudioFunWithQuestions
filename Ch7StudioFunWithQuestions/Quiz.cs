@@ -13,9 +13,9 @@ namespace Ch7StudioFunWithQuestions
             int score = 0;
             Console.WriteLine("**********");
             Console.WriteLine("Choose an option:");
-            Console.WriteLine("1) Answer a T/F type question.");
-            Console.WriteLine("2) Answer a MC type question.");
-            Console.WriteLine("3) ...");
+            Console.WriteLine("1) Answer a True/False type question.");
+            Console.WriteLine("2) Answer a Multiple Choice type question.");
+            Console.WriteLine("3) Answer a Checkbox type question.");
             Console.WriteLine("4) ...");
             Console.WriteLine("5) ...");
             Console.WriteLine("6) Exit");
@@ -30,7 +30,7 @@ namespace Ch7StudioFunWithQuestions
                     MultipleChoiceQuestions.RunProgram(score);
                     return true;
                 case "3":
-
+                    CheckboxQuestions.RunProgram(score);
                     return true;
                 case "4":
 
