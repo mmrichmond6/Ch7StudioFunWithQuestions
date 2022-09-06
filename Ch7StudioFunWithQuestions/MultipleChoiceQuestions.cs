@@ -21,6 +21,8 @@ namespace Ch7StudioFunWithQuestions
         }
         public static int RunProgram(int score)
         {
+            int totalScore = score;
+
             MultipleChoiceQuestions MCQuestion1 = new("The sum of one and one is:", "0", "2", "4", "6", "B");
 
             MultipleChoiceQuestions MCQuestion2 = new("The sum of one and three is:", "0", "2", "4", "6", "C");
@@ -36,9 +38,11 @@ namespace Ch7StudioFunWithQuestions
             fullQuizList.Add(MCQuestion3);
             fullQuizList.Add(MCQuestion4);
 
-            foreach (var item in fullQuizList)
-            {
-                Console.WriteLine("**********");
+            var randomchoice = new Random();
+            int choice = randomchoice.Next(1, fullQuizList.Count);
+            var item = fullQuizList[choice];
+
+            Console.WriteLine("**********");
                 Console.WriteLine("Question:  " + item.StateQuestion);
                 Console.WriteLine("A:  " + item.AnswerChoiceA);
                 Console.WriteLine("B:  " + item.AnswerChoiceB);
@@ -52,21 +56,14 @@ namespace Ch7StudioFunWithQuestions
                 {
                     Console.WriteLine("Your answer is incorrect");
                     Console.WriteLine("The correct answer was: " + item.Answer);
-                    Console.WriteLine("Your quiz score is:  " + score);
                 }
                 if (input.ToUpper() == item.Answer.ToUpper())
                 {
                     Console.WriteLine("Your answer is correct!");
-                    score = score + 1;
-                    Console.WriteLine("Your quiz score is:  " + score);
+                    score = totalScore + 1;
+
                 }
-                Console.WriteLine("Would you like another MC type Question?  Type Y for yes or N for no.");
-                string output = Console.ReadLine();
-                if (output.ToUpper() == "N")
-                {
-                    return score;
-                }
-            }
+                
             return score;
         }
 

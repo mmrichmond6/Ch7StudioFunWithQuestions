@@ -12,16 +12,13 @@ internal class Program
         //* Accept user response
         //* Respond to answer given (correct or incorrect) and Score
 
-        DateTime localDate = DateTime.Now;
-
-
+        
         bool showMenu = true;
         while (showMenu)
         {
             Console.WriteLine("**********");
-            Console.WriteLine("Today is:  " + localDate);
-            Console.WriteLine("**********");
             Console.WriteLine("Welcome to Fun With Questions!");
+            Console.WriteLine("Your score so far is:  " + Quiz.score);
             showMenu = Quiz.MainMenu();
         }
     }

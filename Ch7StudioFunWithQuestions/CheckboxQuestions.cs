@@ -23,6 +23,8 @@ namespace Ch7StudioFunWithQuestions
 
         public static int RunProgram(int score)
         {
+            int totalScore = score;
+
             CheckboxQuestions CBQuestion1 = new("Choose the answer(s) that equal 2.", "2 + 0", "2 * 0", "2 - 0", "2 / 0", "AC");
 
             CheckboxQuestions CBQuestion2 = new("Choose the answer(s) that equal 4.", "2 + 2", "2 * 2", "2 - 2", "2 / 2", "AB");
@@ -38,9 +40,11 @@ namespace Ch7StudioFunWithQuestions
             fullQuizList.Add(CBQuestion3);
             fullQuizList.Add(CBQuestion4);
 
-            foreach (var item in fullQuizList)
-            {
-                Console.WriteLine("**********");
+            var randomchoice = new Random();
+            int choice = randomchoice.Next(1, fullQuizList.Count);
+            var item = fullQuizList[choice];
+
+            Console.WriteLine("**********");
                 Console.WriteLine("Question:  " + item.StateQuestion);
                 Console.WriteLine("A:  " + item.AnswerChoiceA);
                 Console.WriteLine("B:  " + item.AnswerChoiceB);
@@ -57,30 +61,23 @@ namespace Ch7StudioFunWithQuestions
                         {
                         points++;
                         } else
-                    {
-                        points--;
-                    }
+                        {
+                            points--;
+                        }
                     
                     }
                 
                 if (points == item.Answer.Length)
                 {
-                    score++;
+                    score = totalScore + 1;
                     Console.WriteLine("Your answer is correct!");
-                } else
-                {
-                    Console.WriteLine("Your answer is incorrect.");
-                }
-                
 
-                Console.WriteLine("Your quiz score is:  " + score);
-                Console.WriteLine("Would you like another Checkbox type Question?  Type Y for yes or N for no.");
-                string output = Console.ReadLine();
-                if (output.ToUpper() == "N")
-                {
-                    return score;
+                } else
+                    {
+                    Console.WriteLine("Your answer is incorrect.");
+                    Console.WriteLine("The correct answer was: " + item.Answer);
                 }
-            }
+          
             return score;
         }
 
