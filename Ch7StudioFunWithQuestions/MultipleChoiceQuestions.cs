@@ -24,11 +24,8 @@ namespace Ch7StudioFunWithQuestions
             int totalScore = score;
 
             MultipleChoiceQuestions MCQuestion1 = new("The sum of one and one is:", "0", "2", "4", "6", "B");
-
             MultipleChoiceQuestions MCQuestion2 = new("The sum of one and three is:", "0", "2", "4", "6", "C");
-
             MultipleChoiceQuestions MCQuestion3 = new("The difference of one and one is:", "0", "2", "4", "6", "A");
-
             MultipleChoiceQuestions MCQuestion4 = new("The difference of three and one is:", "0", "2", "4", "6", "B");
 
             List<MultipleChoiceQuestions> fullQuizList = new List<MultipleChoiceQuestions>();
@@ -61,9 +58,7 @@ namespace Ch7StudioFunWithQuestions
                 {
                     Console.WriteLine("Your answer is correct!");
                     score = totalScore + 1;
-
-                }
-                
+                }               
             return score;
         }
 
@@ -71,7 +66,5 @@ namespace Ch7StudioFunWithQuestions
         {
             return Equals(obj as MultipleChoiceQuestions);
         }
-
-
     }
 }

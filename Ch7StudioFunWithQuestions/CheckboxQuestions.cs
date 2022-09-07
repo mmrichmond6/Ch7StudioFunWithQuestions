@@ -26,11 +26,8 @@ namespace Ch7StudioFunWithQuestions
             int totalScore = score;
 
             CheckboxQuestions CBQuestion1 = new("Choose the answer(s) that equal 2.", "2 + 0", "2 * 0", "2 - 0", "2 / 0", "AC");
-
             CheckboxQuestions CBQuestion2 = new("Choose the answer(s) that equal 4.", "2 + 2", "2 * 2", "2 - 2", "2 / 2", "AB");
-
             CheckboxQuestions CBQuestion3 = new("Choose the answer(s) that equal 6.", "2 + 4", "2 * 3", "2 - -4", "2 / 4", "ABC");
-
             CheckboxQuestions CBQuestion4 = new("Choose the answer(s) that equal 8.", "2 + 3", "2 * 4", "2 - 10", "8 / 1", "BD");
 
             List<CheckboxQuestions> fullQuizList = new List<CheckboxQuestions>();
@@ -63,21 +60,18 @@ namespace Ch7StudioFunWithQuestions
                         } else
                         {
                             points--;
-                        }
-                    
+                        }                    
                     }
                 
                 if (points == item.Answer.Length)
                 {
                     score = totalScore + 1;
                     Console.WriteLine("Your answer is correct!");
-
                 } else
                     {
                     Console.WriteLine("Your answer is incorrect.");
                     Console.WriteLine("The correct answer was: " + item.Answer);
-                }
-          
+                }          
             return score;
         }
 
@@ -85,6 +79,5 @@ namespace Ch7StudioFunWithQuestions
         {
             return Equals(obj as CheckboxQuestions);
         }
-
     }
 }

@@ -27,11 +27,8 @@ namespace Ch7StudioFunWithQuestions
             int totalScore = score;
 
             TrueFalseQuestions TFQuestion1 = new("The sum of one and one is two.", "True", "False", "", "", "A");
-
             TrueFalseQuestions TFQuestion2 = new("The sum of one and three is two.", "True", "False", "", "", "B");
-
             TrueFalseQuestions TFQuestion3 = new("The difference of one and one is two.", "True", "False", "", "", "B");
-
             TrueFalseQuestions TFQuestion4 = new("The difference of three and one is two.", "True", "False", "", "", "A");
 
             List<TrueFalseQuestions> fullQuizList = new List<TrueFalseQuestions>();
@@ -64,15 +61,12 @@ namespace Ch7StudioFunWithQuestions
                     score = totalScore + 1;
                 }
             return score;
-            }
-      
+            }      
 
         public override bool Equals(object? obj)
         {
             return Equals(obj as TrueFalseQuestions);
-        }
-
-        
+        }        
     }
 }
 
