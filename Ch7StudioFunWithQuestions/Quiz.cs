@@ -17,8 +17,8 @@ namespace Ch7StudioFunWithQuestions
             Console.WriteLine("1) Answer a True/False type question.");
             Console.WriteLine("2) Answer a Multiple Choice type question.");
             Console.WriteLine("3) Answer a Checkbox type question.");
-            Console.WriteLine("4) Add a NEW question to the question bank.");
-            Console.WriteLine("5) Print all questions in the bank.");
+            Console.WriteLine("4) Add a NEW question to any question bank.");
+            Console.WriteLine("5) See all questions.");
             Console.WriteLine("6) Let computer choose random question type.");
             Console.WriteLine("7) Exit");
             Console.Write("\r\nSelect an option: ");

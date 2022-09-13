@@ -23,7 +23,7 @@ namespace Ch7StudioFunWithQuestions
 
             if (input == 1)
             {
-                Console.WriteLine("State the question you would like asked: ");
+                Console.WriteLine("State the True/False question you would like asked: ");
                 string StateQuestion = Console.ReadLine();
                 string AnswerChoiceA = "True";
                 string AnswerChoiceB = "False";
@@ -35,7 +35,7 @@ namespace Ch7StudioFunWithQuestions
                 Console.WriteLine("A:  " + AnswerChoiceA);
                 Console.WriteLine("B:  " + AnswerChoiceB);
                 Console.WriteLine("**********");
-                Console.WriteLine("Which option (A, B, C, D) is the correct answer to your question?  ");
+                Console.WriteLine("Which option (A or B) is the correct answer to your question?  ");
                 string Answer = Console.ReadLine();
 
                 Console.WriteLine("**********");
@@ -48,11 +48,13 @@ namespace Ch7StudioFunWithQuestions
                     Console.WriteLine("A:  " + item.AnswerChoiceA);
                     Console.WriteLine("B:  " + item.AnswerChoiceB);
                     Console.WriteLine("**********");
+                    Console.WriteLine("Answer:  " + item.Answer);
+
                 }
             }
             else if (input == 2)
             {
-                Console.WriteLine("State the question you would like asked: ");
+                Console.WriteLine("State the MultipleChoice question you would like asked: ");
                 string StateQuestion = Console.ReadLine();
                 Console.WriteLine("What answer choice would you like to place for Option A?  ");
                 string AnswerChoiceA = Console.ReadLine();
@@ -86,11 +88,12 @@ namespace Ch7StudioFunWithQuestions
                     Console.WriteLine("C:  " + item.AnswerChoiceC);
                     Console.WriteLine("D:  " + item.AnswerChoiceD);
                     Console.WriteLine("**********");
+                    Console.WriteLine("Answer:  " + item.Answer);
                 }
             }
             else if (input == 3)
             {
-                Console.WriteLine("State the question you would like asked: ");
+                Console.WriteLine("State the Checkbox question you would like asked: ");
                 string StateQuestion = Console.ReadLine();
                 Console.WriteLine("What answer choice would you like to place for Option A?  ");
                 string AnswerChoiceA = Console.ReadLine();
@@ -109,7 +112,7 @@ namespace Ch7StudioFunWithQuestions
                 Console.WriteLine("D:  " + AnswerChoiceD);
                 Console.WriteLine("**********");
 
-                Console.WriteLine("Which option (A, B, C, D) is the correct answer to your question?  ");
+                Console.WriteLine("Which options (A, B, C, D) are the correct answer to your question?  ");
                 string Answer = Console.ReadLine();
 
                 Console.WriteLine("**********");
@@ -125,6 +128,7 @@ namespace Ch7StudioFunWithQuestions
                     Console.WriteLine("C:  " + item.AnswerChoiceC);
                     Console.WriteLine("D:  " + item.AnswerChoiceD);
                     Console.WriteLine("**********");
+                    Console.WriteLine("Answer:  " + item.Answer);
                 }
             }
             else
