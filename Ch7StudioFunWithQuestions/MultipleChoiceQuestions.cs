@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Ch7StudioFunWithQuestions
@@ -27,17 +28,12 @@ namespace Ch7StudioFunWithQuestions
             int choice = randomchoice.Next(1, fullQuizListMC.Count);
             var item = fullQuizListMC[choice];
 
-            Console.WriteLine("**********");
-                Console.WriteLine("Question:  " + item.StateQuestion);
-                Console.WriteLine("A:  " + item.AnswerChoiceA);
-                Console.WriteLine("B:  " + item.AnswerChoiceB);
-                Console.WriteLine("C:  " + item.AnswerChoiceC);
-                Console.WriteLine("D:  " + item.AnswerChoiceD);
-                Console.WriteLine("**********");
-                Console.WriteLine("Enter your Answer Choice:  ");
-                string input = Console.ReadLine();
+            PrintToConsole.AskQuestionFormat(item);
+            Console.WriteLine("Enter your Answer Choice:  ");
+            string response = Console.ReadLine();
+            string input = PrintToConsole.CleanUpInputFromUser(response);
 
-                if (input.ToUpper() != item.Answer.ToUpper())
+            if (input.ToUpper() != item.Answer.ToUpper())
                 {
                     Console.WriteLine("Your answer is incorrect");
                     Console.WriteLine("The correct answer was: " + item.Answer);

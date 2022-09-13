@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Sources;
 using static System.Formats.Asn1.AsnWriter;
@@ -37,19 +38,14 @@ namespace Ch7StudioFunWithQuestions
                 Console.WriteLine("**********");
                 Console.WriteLine("Which option (A or B) is the correct answer to your question?  ");
                 string Answer = Console.ReadLine();
+                Answer = PrintToConsole.CleanUpInputFromUser(Answer);
 
                 Console.WriteLine("**********");
                 TrueFalseQuestions newQuestion = new(StateQuestion, AnswerChoiceA, AnswerChoiceB, AnswerChoiceC, AnswerChoiceD, Answer);
                 TrueFalseQuestions.fullQuizListTF.Add(newQuestion);
                 foreach (TrueFalseQuestions item in TrueFalseQuestions.fullQuizListTF)
                 {
-                    Console.WriteLine("**********");
-                    Console.WriteLine("Question:  " + item.StateQuestion);
-                    Console.WriteLine("A:  " + item.AnswerChoiceA);
-                    Console.WriteLine("B:  " + item.AnswerChoiceB);
-                    Console.WriteLine("**********");
-                    Console.WriteLine("Answer:  " + item.Answer);
-
+                    PrintToConsole.VerifyQuestionFormat(item);
                 }
             }
             else if (input == 2)
@@ -72,23 +68,17 @@ namespace Ch7StudioFunWithQuestions
                 Console.WriteLine("C:  " + AnswerChoiceC);
                 Console.WriteLine("D:  " + AnswerChoiceD);
                 Console.WriteLine("**********");
-
                 Console.WriteLine("Which option (A, B, C, D) is the correct answer to your question?  ");
                 string Answer = Console.ReadLine();
+                Answer = PrintToConsole.CleanUpInputFromUser(Answer); 
 
                 Console.WriteLine("**********");
                 MultipleChoiceQuestions newQuestion = new(StateQuestion, AnswerChoiceA, AnswerChoiceB, AnswerChoiceC, AnswerChoiceD, Answer);
                 MultipleChoiceQuestions.fullQuizListMC.Add(newQuestion);
+
                 foreach (MultipleChoiceQuestions item in MultipleChoiceQuestions.fullQuizListMC)
                 {
-                    Console.WriteLine("**********");
-                    Console.WriteLine("Question:  " + item.StateQuestion);
-                    Console.WriteLine("A:  " + item.AnswerChoiceA);
-                    Console.WriteLine("B:  " + item.AnswerChoiceB);
-                    Console.WriteLine("C:  " + item.AnswerChoiceC);
-                    Console.WriteLine("D:  " + item.AnswerChoiceD);
-                    Console.WriteLine("**********");
-                    Console.WriteLine("Answer:  " + item.Answer);
+                    PrintToConsole.VerifyQuestionFormat(item);
                 }
             }
             else if (input == 3)
@@ -111,24 +101,17 @@ namespace Ch7StudioFunWithQuestions
                 Console.WriteLine("C:  " + AnswerChoiceC);
                 Console.WriteLine("D:  " + AnswerChoiceD);
                 Console.WriteLine("**********");
-
                 Console.WriteLine("Which options (A, B, C, D) are the correct answer to your question?  ");
                 string Answer = Console.ReadLine();
-
+                Answer = PrintToConsole.CleanUpInputFromUser(Answer);
                 Console.WriteLine("**********");
 
                 CheckboxQuestions newQuestion = new(StateQuestion, AnswerChoiceA, AnswerChoiceB, AnswerChoiceC, AnswerChoiceD, Answer);
                 CheckboxQuestions.fullQuizListCB.Add(newQuestion);
+
                 foreach (CheckboxQuestions item in CheckboxQuestions.fullQuizListCB)
                 {
-                    Console.WriteLine("**********");
-                    Console.WriteLine("Question:  " + item.StateQuestion);
-                    Console.WriteLine("A:  " + item.AnswerChoiceA);
-                    Console.WriteLine("B:  " + item.AnswerChoiceB);
-                    Console.WriteLine("C:  " + item.AnswerChoiceC);
-                    Console.WriteLine("D:  " + item.AnswerChoiceD);
-                    Console.WriteLine("**********");
-                    Console.WriteLine("Answer:  " + item.Answer);
+                    PrintToConsole.VerifyQuestionFormat(item);
                 }
             }
             else
@@ -156,14 +139,7 @@ namespace Ch7StudioFunWithQuestions
 
             foreach (Questions item in allQuestions)
             {
-                Console.WriteLine("**********");
-                Console.WriteLine("Question:  " + item.StateQuestion);
-                Console.WriteLine("A:  " + item.AnswerChoiceA);
-                Console.WriteLine("B:  " + item.AnswerChoiceB);
-                Console.WriteLine("C:  " + item.AnswerChoiceC);
-                Console.WriteLine("D:  " + item.AnswerChoiceD);
-                Console.WriteLine("**********");
-                Console.WriteLine("Answer:  " + item.Answer);
+                PrintToConsole.VerifyQuestionFormat(item);
             }
             return score;
         }

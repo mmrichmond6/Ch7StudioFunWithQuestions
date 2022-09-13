@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Ch7StudioFunWithQuestions
@@ -25,43 +26,37 @@ namespace Ch7StudioFunWithQuestions
         public static int RunProgram(int score)
         {
             int totalScore = score;
-
             
             var randomchoice = new Random();
             int choice = randomchoice.Next(1, fullQuizListCB.Count);
             var item = fullQuizListCB[choice];
 
-            Console.WriteLine("**********");
-                Console.WriteLine("Question:  " + item.StateQuestion);
-                Console.WriteLine("A:  " + item.AnswerChoiceA);
-                Console.WriteLine("B:  " + item.AnswerChoiceB);
-                Console.WriteLine("C:  " + item.AnswerChoiceC);
-                Console.WriteLine("D:  " + item.AnswerChoiceD);
-                string input = Console.ReadLine();
-                input = input.Trim();
-                input = input.ToUpper();
-                int points = 0;
+            PrintToConsole.AskQuestionFormat(item);
+            string response = Console.ReadLine();
+            string input = PrintToConsole.CleanUpInputFromUser(response);
+            
+            int points = 0;
 
-                foreach (char c in input) 
-                    {
-                        if (item.Answer.Contains(c))
-                        {
-                        points++;
-                        } else
-                        {
-                            points--;
-                        }                    
-                    }
-                
-                if (points == item.Answer.Length)
+            foreach (char c in input) 
                 {
-                    score = totalScore + 1;
-                    Console.WriteLine("Your answer is correct!");
-                } else
+                    if (item.Answer.Contains(c))
                     {
-                    Console.WriteLine("Your answer is incorrect.");
-                    Console.WriteLine("The correct answer was: " + item.Answer);
-                }          
+                    points++;
+                    } else
+                    {
+                        points--;
+                    }                    
+                }
+                
+            if (points == item.Answer.Length)
+            {
+                score = totalScore + 1;
+                Console.WriteLine("Your answer is correct!");
+            } else
+                {
+                Console.WriteLine("Your answer is incorrect.");
+                Console.WriteLine("The correct answer was: " + item.Answer);
+            }          
             return score;
         }
 
