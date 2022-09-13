@@ -20,10 +20,11 @@ namespace Ch7StudioFunWithQuestions
             Console.WriteLine("1) Answer a True/False type question.");
             Console.WriteLine("2) Answer a Multiple Choice type question.");
             Console.WriteLine("3) Answer a Checkbox type question.");
-            Console.WriteLine("4) Add a NEW question to any question bank.");
-            Console.WriteLine("5) See all active questions.");
-            Console.WriteLine("6) Let computer choose random question type.");
-            Console.WriteLine("7) Exit");
+            Console.WriteLine("4) Let computer choose random question type.");
+            Console.WriteLine("5) Add a NEW question to any question bank.");
+            Console.WriteLine("6) Modify an ACTIVE question in any question bank.");
+            Console.WriteLine("7) See all active questions.");
+            Console.WriteLine("8) Exit");
             Console.Write("\r\nSelect an option: ");
 
             switch (Console.ReadLine())
@@ -41,12 +42,6 @@ namespace Ch7StudioFunWithQuestions
                     AdjustScore(passFail);
                     return true;
                 case "4":
-                    passFail = AddQuestion.GatherQuestionPieces(value);
-                    return true;
-                case "5":
-                    passFail = AddQuestion.CombineAllBanks(value);
-                    return true;
-                case "6":
                     var randomchoice = new Random();
                     int choice = randomchoice.Next(1, 3);
                     if (choice == 1)
@@ -65,7 +60,16 @@ namespace Ch7StudioFunWithQuestions
                         AdjustScore(passFail);
                     }
                     return true;
+                case "5":
+                    passFail = AddQuestion.GatherQuestionPieces(value);
+                    return true;
+                case "6":
+                    ModifyActiveQuestion.ModifyActiveQuestionPartOne();
+                    return true;
                 case "7":
+                    passFail = AddQuestion.CombineAllBanks(value);
+                    return true;
+                case "8":
                     Console.WriteLine("Your final correct is:  " + score);
                     Console.WriteLine("Your final missed is:  " + missed);
                     return false;
