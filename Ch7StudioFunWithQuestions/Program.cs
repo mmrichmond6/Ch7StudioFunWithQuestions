@@ -42,12 +42,34 @@ internal class Program
         CheckboxQuestions.fullQuizListCB.Add(CBQuestion3);
         CheckboxQuestions.fullQuizListCB.Add(CBQuestion4);
 
+        foreach (TrueFalseQuestions item in TrueFalseQuestions.fullQuizListTF)
+        {
+            AddQuestion.allQuestions.Add(item);
+        }
+        foreach (MultipleChoiceQuestions item in MultipleChoiceQuestions.fullQuizListMC)
+        {
+            AddQuestion.allQuestions.Add(item);
+        }
+        foreach (CheckboxQuestions item in CheckboxQuestions.fullQuizListCB)
+        {
+            AddQuestion.allQuestions.Add(item);
+        }
+
         bool showMenu = true;
         while (showMenu)
         {
             Console.WriteLine("**********");
             Console.WriteLine("Welcome to Fun With Questions!");
-            Console.WriteLine("Your score so far is:  " + Quiz.score);
+            Console.WriteLine("**********");
+            Console.WriteLine("Your number correct so far is:  " + Quiz.score);
+            Console.WriteLine("Your number missed so far is:  " + Quiz.missed);
+            Console.WriteLine("**********");
+            Console.WriteLine("There are " + TrueFalseQuestions.fullQuizListTF.Count + " questions in the True/False Question Bank.");
+            Console.WriteLine("There are " + MultipleChoiceQuestions.fullQuizListMC.Count + " questions in the MultipleChoice Question Bank.");
+            Console.WriteLine("There are " + CheckboxQuestions.fullQuizListCB.Count + " questions in the Checkbox Question Bank.");
+            int totalQuestions = TrueFalseQuestions.fullQuizListTF.Count + MultipleChoiceQuestions.fullQuizListMC.Count + CheckboxQuestions.fullQuizListCB.Count;
+            Console.WriteLine("There are " + totalQuestions + " questions in all.");
+            Console.WriteLine("**********"); 
             showMenu = Quiz.MainMenu();
         }
     }

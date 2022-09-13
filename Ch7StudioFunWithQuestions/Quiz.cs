@@ -10,6 +10,9 @@ namespace Ch7StudioFunWithQuestions
     public class Quiz
     {
         public static int score;
+        public static int missed;
+        private static int value;
+        private static int passFail;
         public static bool MainMenu()
         {
             Console.WriteLine("**********");
@@ -18,7 +21,7 @@ namespace Ch7StudioFunWithQuestions
             Console.WriteLine("2) Answer a Multiple Choice type question.");
             Console.WriteLine("3) Answer a Checkbox type question.");
             Console.WriteLine("4) Add a NEW question to any question bank.");
-            Console.WriteLine("5) See all questions.");
+            Console.WriteLine("5) See all active questions.");
             Console.WriteLine("6) Let computer choose random question type.");
             Console.WriteLine("7) Exit");
             Console.Write("\r\nSelect an option: ");
@@ -26,41 +29,69 @@ namespace Ch7StudioFunWithQuestions
             switch (Console.ReadLine())
             {
                 case "1":
-                    score = TrueFalseQuestions.RunProgram(score);
+                    passFail = TrueFalseQuestions.RunProgram(value);
+                    AdjustScore(passFail);
                     return true;
                 case "2":
-                    score = MultipleChoiceQuestions.RunProgram(score);
+                    passFail = MultipleChoiceQuestions.RunProgram(value);
+                    AdjustScore(passFail);
                     return true;
                 case "3":
-                    score = CheckboxQuestions.RunProgram(score);
+                    passFail = CheckboxQuestions.RunProgram(value);
+                    AdjustScore(passFail);
                     return true;
                 case "4":
-                    score = AddQuestion.GatherQuestionPieces(score);
+                    passFail = AddQuestion.GatherQuestionPieces(value);
                     return true;
                 case "5":
-                    score = AddQuestion.CombineAllBanks(score);
+                    passFail = AddQuestion.CombineAllBanks(value);
                     return true;
                 case "6":
                     var randomchoice = new Random();
                     int choice = randomchoice.Next(1, 3);
                     if (choice == 1)
                     {
-                        score = TrueFalseQuestions.RunProgram(score);
+                        passFail = TrueFalseQuestions.RunProgram(value);
+                        AdjustScore(passFail);
                     }
                     if (choice == 2)
                     {
-                        score = MultipleChoiceQuestions.RunProgram(score);
+                        passFail = MultipleChoiceQuestions.RunProgram(value);
+                        AdjustScore(passFail);
                     }
                     if (choice == 3)
                     {
-                        score = CheckboxQuestions.RunProgram(score);
+                        passFail = CheckboxQuestions.RunProgram(value);
+                        AdjustScore(passFail);
                     }
                     return true;
                 case "7":
-                    Console.WriteLine("Your final score is:  " + score);
+                    Console.WriteLine("Your final correct is:  " + score);
+                    Console.WriteLine("Your final missed is:  " + missed);
                     return false;
                 default:
+                    Console.WriteLine("Invalid choice.");
                     return true;
+            }
+        }
+
+        private static void AdjustScore(int passFail)
+        {
+            if (passFail == 1)
+            {
+                Quiz.score++;
+            }
+            else if (passFail == -1)
+            {
+                Quiz.missed++;
+            }
+            else if (passFail == 0)
+            {
+                Console.WriteLine("No change is scores.");
+            }
+            else
+            {
+                Console.WriteLine("Do not need a catch all 'else'?");
             }
         }
     }

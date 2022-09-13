@@ -12,7 +12,7 @@ namespace Ch7StudioFunWithQuestions
 {
     public class AddQuestion
     {
-
+        public static List<Questions> allQuestions = new List<Questions>();
         public static int GatherQuestionPieces(int score)
         {
             Console.WriteLine("Which question bank should this question be added to?");
@@ -43,6 +43,7 @@ namespace Ch7StudioFunWithQuestions
                 Console.WriteLine("**********");
                 TrueFalseQuestions newQuestion = new(StateQuestion, AnswerChoiceA, AnswerChoiceB, AnswerChoiceC, AnswerChoiceD, Answer);
                 TrueFalseQuestions.fullQuizListTF.Add(newQuestion);
+                AddQuestion.allQuestions.Add(newQuestion);
                 foreach (TrueFalseQuestions item in TrueFalseQuestions.fullQuizListTF)
                 {
                     PrintToConsole.VerifyQuestionFormat(item);
@@ -75,7 +76,7 @@ namespace Ch7StudioFunWithQuestions
                 Console.WriteLine("**********");
                 MultipleChoiceQuestions newQuestion = new(StateQuestion, AnswerChoiceA, AnswerChoiceB, AnswerChoiceC, AnswerChoiceD, Answer);
                 MultipleChoiceQuestions.fullQuizListMC.Add(newQuestion);
-
+                AddQuestion.allQuestions.Add(newQuestion);
                 foreach (MultipleChoiceQuestions item in MultipleChoiceQuestions.fullQuizListMC)
                 {
                     PrintToConsole.VerifyQuestionFormat(item);
@@ -108,7 +109,7 @@ namespace Ch7StudioFunWithQuestions
 
                 CheckboxQuestions newQuestion = new(StateQuestion, AnswerChoiceA, AnswerChoiceB, AnswerChoiceC, AnswerChoiceD, Answer);
                 CheckboxQuestions.fullQuizListCB.Add(newQuestion);
-
+                AddQuestion.allQuestions.Add(newQuestion);
                 foreach (CheckboxQuestions item in CheckboxQuestions.fullQuizListCB)
                 {
                     PrintToConsole.VerifyQuestionFormat(item);
@@ -122,25 +123,12 @@ namespace Ch7StudioFunWithQuestions
         }
 
         public static int CombineAllBanks(int score)
-        {
-            List<Questions> allQuestions = new List<Questions>();
-            foreach (TrueFalseQuestions item in TrueFalseQuestions.fullQuizListTF)
-            {
-                allQuestions.Add(item);
-            }
-            foreach (MultipleChoiceQuestions item in MultipleChoiceQuestions.fullQuizListMC)
-            {
-                allQuestions.Add(item);
-            }
-            foreach (CheckboxQuestions item in CheckboxQuestions.fullQuizListCB)
-            {
-                allQuestions.Add(item);
-            }
-
+        {            
             foreach (Questions item in allQuestions)
             {
                 PrintToConsole.VerifyQuestionFormat(item);
             }
+            Console.WriteLine("There are " + allQuestions.Count + " active questions total.");
             return score;
         }
     }

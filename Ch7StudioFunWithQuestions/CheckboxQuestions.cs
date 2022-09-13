@@ -25,10 +25,14 @@ namespace Ch7StudioFunWithQuestions
 
         public static int RunProgram(int score)
         {
-            int totalScore = score;
-            
+            if (fullQuizListCB.Count < 1)
+            {
+                Console.WriteLine("There are no more question in this bank.  Choose to add a question or pick another bank.");
+                return score;
+            }
+
             var randomchoice = new Random();
-            int choice = randomchoice.Next(1, fullQuizListCB.Count);
+            int choice = (randomchoice.Next(1, fullQuizListCB.Count)) - 1;
             var item = fullQuizListCB[choice];
 
             PrintToConsole.AskQuestionFormat(item);
@@ -41,7 +45,7 @@ namespace Ch7StudioFunWithQuestions
                 {
                     if (item.Answer.Contains(c))
                     {
-                    points++;
+                        points++;
                     } else
                     {
                         points--;
@@ -50,19 +54,19 @@ namespace Ch7StudioFunWithQuestions
                 
             if (points == item.Answer.Length)
             {
-                score = totalScore + 1;
                 Console.WriteLine("Your answer is correct!");
+                score = 1;
+                fullQuizListCB.Remove(item);
+                AddQuestion.allQuestions.Remove(item);
             } else
                 {
                 Console.WriteLine("Your answer is incorrect.");
                 Console.WriteLine("The correct answer was: " + item.Answer);
+                score = -1;
             }          
             return score;
         }
 
-        public override bool Equals(object? obj)
-        {
-            return Equals(obj as CheckboxQuestions);
-        }
+        
     }
 }

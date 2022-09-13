@@ -22,10 +22,14 @@ namespace Ch7StudioFunWithQuestions
         }
         public static int RunProgram(int score)
         {
-            int totalScore = score;
+            if (fullQuizListMC.Count < 1)
+            {
+                Console.WriteLine("There are no more question in this bank.  Choose to add a question or pick another bank.");
+                return score;
+            }
 
             var randomchoice = new Random();
-            int choice = randomchoice.Next(1, fullQuizListMC.Count);
+            int choice = (randomchoice.Next(1, fullQuizListMC.Count)) - 1;
             var item = fullQuizListMC[choice];
 
             PrintToConsole.AskQuestionFormat(item);
@@ -34,21 +38,21 @@ namespace Ch7StudioFunWithQuestions
             string input = PrintToConsole.CleanUpInputFromUser(response);
 
             if (input.ToUpper() != item.Answer.ToUpper())
-                {
-                    Console.WriteLine("Your answer is incorrect");
-                    Console.WriteLine("The correct answer was: " + item.Answer);
-                }
-                if (input.ToUpper() == item.Answer.ToUpper())
-                {
-                    Console.WriteLine("Your answer is correct!");
-                    score = totalScore + 1;
-                }               
-            return score;
+            {
+                Console.WriteLine("Your answer is incorrect");
+                Console.WriteLine("The correct answer was: " + item.Answer);
+                score--;
+            }
+            if (input.ToUpper() == item.Answer.ToUpper())
+            {
+                Console.WriteLine("Your answer is correct!");
+                score++;
+                fullQuizListMC.Remove(item);
+                AddQuestion.allQuestions.Remove(item);
+            }               
+        return score;
         }
 
-        public override bool Equals(object? obj)
-        {
-            return Equals(obj as MultipleChoiceQuestions);
-        }
+        
     }
 }
