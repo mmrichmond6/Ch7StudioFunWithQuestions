@@ -14,6 +14,7 @@ namespace Ch7StudioFunWithQuestions
         public override string AnswerChoiceC { get; set; }
         public override string AnswerChoiceD { get; set; }
         public override string Answer { get; set; }
+        public static List<CheckboxQuestions> fullQuizListCB = new List<CheckboxQuestions>();
 
 
         public CheckboxQuestions(string stateQuestion, string answerChoiceA, string answerChoiceB, string answerChoiceC, string answerChoiceD, string answer) : base(stateQuestion, answerChoiceA, answerChoiceB, answerChoiceC, answerChoiceD, answer)
@@ -25,21 +26,10 @@ namespace Ch7StudioFunWithQuestions
         {
             int totalScore = score;
 
-            CheckboxQuestions CBQuestion1 = new("Choose the answer(s) that equal 2.", "2 + 0", "2 * 0", "2 - 0", "2 / 0", "AC");
-            CheckboxQuestions CBQuestion2 = new("Choose the answer(s) that equal 4.", "2 + 2", "2 * 2", "2 - 2", "2 / 2", "AB");
-            CheckboxQuestions CBQuestion3 = new("Choose the answer(s) that equal 6.", "2 + 4", "2 * 3", "2 - -4", "2 / 4", "ABC");
-            CheckboxQuestions CBQuestion4 = new("Choose the answer(s) that equal 8.", "2 + 3", "2 * 4", "2 - 10", "8 / 1", "BD");
-
-            List<CheckboxQuestions> fullQuizList = new List<CheckboxQuestions>();
-
-            fullQuizList.Add(CBQuestion1);
-            fullQuizList.Add(CBQuestion2);
-            fullQuizList.Add(CBQuestion3);
-            fullQuizList.Add(CBQuestion4);
-
+            
             var randomchoice = new Random();
-            int choice = randomchoice.Next(1, fullQuizList.Count);
-            var item = fullQuizList[choice];
+            int choice = randomchoice.Next(1, fullQuizListCB.Count);
+            var item = fullQuizListCB[choice];
 
             Console.WriteLine("**********");
                 Console.WriteLine("Question:  " + item.StateQuestion);

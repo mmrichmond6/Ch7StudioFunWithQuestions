@@ -15,7 +15,8 @@ namespace Ch7StudioFunWithQuestions
         public override string AnswerChoiceC { get; set; }
         public override string AnswerChoiceD { get; set; }
         public override string Answer { get; set; }
-        
+        public static List<TrueFalseQuestions> fullQuizListTF = new List<TrueFalseQuestions>();
+
 
         public TrueFalseQuestions(string stateQuestion, string answerChoiceA, string answerChoiceB, string answerChoiceC, string answerChoiceD, string answer) : base(stateQuestion, answerChoiceA, answerChoiceB, answerChoiceC, answerChoiceD, answer)
         {
@@ -26,21 +27,10 @@ namespace Ch7StudioFunWithQuestions
         {
             int totalScore = score;
 
-            TrueFalseQuestions TFQuestion1 = new("The sum of one and one is two.", "True", "False", "", "", "A");
-            TrueFalseQuestions TFQuestion2 = new("The sum of one and three is two.", "True", "False", "", "", "B");
-            TrueFalseQuestions TFQuestion3 = new("The difference of one and one is two.", "True", "False", "", "", "B");
-            TrueFalseQuestions TFQuestion4 = new("The difference of three and one is two.", "True", "False", "", "", "A");
-
-            List<TrueFalseQuestions> fullQuizList = new List<TrueFalseQuestions>();
-
-            fullQuizList.Add(TFQuestion1);
-            fullQuizList.Add(TFQuestion2);
-            fullQuizList.Add(TFQuestion3);
-            fullQuizList.Add(TFQuestion4);
-
+            
             var randomchoice = new Random();
-            int choice = randomchoice.Next(1, fullQuizList.Count);
-            var item = fullQuizList[choice];
+            int choice = randomchoice.Next(1, fullQuizListTF.Count);
+            var item = fullQuizListTF[choice];
             
                 Console.WriteLine("**********");
                 Console.WriteLine("Question:  " + item.StateQuestion);

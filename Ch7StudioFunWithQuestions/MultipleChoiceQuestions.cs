@@ -14,7 +14,7 @@ namespace Ch7StudioFunWithQuestions
         public override string AnswerChoiceC { get; set; }
         public override string AnswerChoiceD { get; set; }
         public override string Answer { get; set; }
-
+        public static List<MultipleChoiceQuestions> fullQuizListMC = new List<MultipleChoiceQuestions>();
 
         public MultipleChoiceQuestions(string stateQuestion, string answerChoiceA, string answerChoiceB, string answerChoiceC, string answerChoiceD, string answer) : base(stateQuestion, answerChoiceA, answerChoiceB, answerChoiceC, answerChoiceD, answer)
         {
@@ -23,21 +23,9 @@ namespace Ch7StudioFunWithQuestions
         {
             int totalScore = score;
 
-            MultipleChoiceQuestions MCQuestion1 = new("The sum of one and one is:", "0", "2", "4", "6", "B");
-            MultipleChoiceQuestions MCQuestion2 = new("The sum of one and three is:", "0", "2", "4", "6", "C");
-            MultipleChoiceQuestions MCQuestion3 = new("The difference of one and one is:", "0", "2", "4", "6", "A");
-            MultipleChoiceQuestions MCQuestion4 = new("The difference of three and one is:", "0", "2", "4", "6", "B");
-
-            List<MultipleChoiceQuestions> fullQuizList = new List<MultipleChoiceQuestions>();
-
-            fullQuizList.Add(MCQuestion1);
-            fullQuizList.Add(MCQuestion2);
-            fullQuizList.Add(MCQuestion3);
-            fullQuizList.Add(MCQuestion4);
-
             var randomchoice = new Random();
-            int choice = randomchoice.Next(1, fullQuizList.Count);
-            var item = fullQuizList[choice];
+            int choice = randomchoice.Next(1, fullQuizListMC.Count);
+            var item = fullQuizListMC[choice];
 
             Console.WriteLine("**********");
                 Console.WriteLine("Question:  " + item.StateQuestion);
