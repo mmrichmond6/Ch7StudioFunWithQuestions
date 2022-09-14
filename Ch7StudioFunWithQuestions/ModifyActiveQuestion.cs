@@ -24,7 +24,6 @@ namespace Ch7StudioFunWithQuestions
 
         public static void ModifyActiveQuestionPartOne()
         {
-
             Console.WriteLine("**********");
             Console.WriteLine("What type of question do you wish to modify:");
             Console.WriteLine("1) True/False type question.");
@@ -50,11 +49,6 @@ namespace Ch7StudioFunWithQuestions
                         TrueFalseQuestions.fullQuizListTF[i] = (TrueFalseQuestions)tempModList[i];
                     }
                 }
-                /*foreach (TrueFalseQuestions question in TrueFalseQuestions.fullQuizListTF)
-                {
-                    PrintToConsole.VerifyQuestionFormat(question);
-                }*/
-
             }
             else if (option == 2)
             {
@@ -154,7 +148,6 @@ namespace Ch7StudioFunWithQuestions
                 Console.WriteLine("What would you like Answer to be?");
                 string modAnswer = Console.ReadLine();
                 modAnswer = PrintToConsole.CleanUpInputFromUser(modAnswer);
-
                 list[choice].Answer = modAnswer;
             }
             else
@@ -165,6 +158,5 @@ namespace Ch7StudioFunWithQuestions
             PrintToConsole.VerifyQuestionFormat(list[choice]);
             return list;
         }
-
     }
 }

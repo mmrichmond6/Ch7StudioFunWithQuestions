@@ -17,11 +17,9 @@ namespace Ch7StudioFunWithQuestions
         public override string Answer { get; set; }
         public static List<CheckboxQuestions> fullQuizListCB = new List<CheckboxQuestions>();
 
-
         public CheckboxQuestions(string stateQuestion, string answerChoiceA, string answerChoiceB, string answerChoiceC, string answerChoiceD, string answer) : base(stateQuestion, answerChoiceA, answerChoiceB, answerChoiceC, answerChoiceD, answer)
         {
         }
-
 
         public static int RunProgram(int score)
         {
@@ -63,13 +61,8 @@ namespace Ch7StudioFunWithQuestions
                 Console.WriteLine("Your answer is incorrect.");
                 Console.WriteLine("The correct answer was: " + item.Answer);
                 score = -1;
-            }          
+            }
             return score;
-        }
-
-        internal static void ModifyTrueFalseQuestion()
-        {
-            throw new NotImplementedException();
         }
     }
 }

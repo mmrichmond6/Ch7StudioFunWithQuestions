@@ -9,15 +9,6 @@ namespace Ch7StudioFunWithQuestions
 {
     public class PrintToConsole
     {
-        
-        public string StateQuestion { get; set; }
-        public string AnswerChoiceA { get; set; }
-        public string AnswerChoiceB { get; set; }
-        public string AnswerChoiceC { get; set; }
-        public string AnswerChoiceD { get; set; }
-        public string Answer { get; set; }
-
-
         public static void AskQuestionFormat(Questions item)
         {
             Console.WriteLine("**********");

@@ -69,7 +69,7 @@ internal class Program
             Console.WriteLine("There are " + CheckboxQuestions.fullQuizListCB.Count + " questions in the Checkbox Question Bank.");
             int totalQuestions = TrueFalseQuestions.fullQuizListTF.Count + MultipleChoiceQuestions.fullQuizListMC.Count + CheckboxQuestions.fullQuizListCB.Count;
             Console.WriteLine("There are " + totalQuestions + " questions in all.");
-            Console.WriteLine("**********"); 
+            Console.WriteLine("**********");
             showMenu = Quiz.MainMenu();
         }
     }

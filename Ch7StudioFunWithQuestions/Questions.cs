@@ -24,7 +24,5 @@ namespace Ch7StudioFunWithQuestions
             AnswerChoiceD = answerChoiceD;
             Answer = answer;
         }
-
-
     }
 }
