@@ -58,11 +58,6 @@ namespace Ch7StudioFunWithQuestions
             }
         return score;
         }
-
-        internal static void ModifyTrueFalseQuestion(string input)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

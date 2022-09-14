@@ -130,8 +130,6 @@ namespace Ch7StudioFunWithQuestions
             }
             Console.WriteLine("There are " + allQuestions.Count + " active questions total.");
             return score;
-        }
-
-        
+        }        
     }
 }

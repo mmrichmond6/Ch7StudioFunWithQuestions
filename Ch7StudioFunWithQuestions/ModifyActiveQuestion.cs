@@ -9,7 +9,6 @@ namespace Ch7StudioFunWithQuestions
     public class ModifyActiveQuestion : Questions
     {
         
-
         public override string StateQuestion { get; set; }
         public override string AnswerChoiceA { get; set; }
         public override string AnswerChoiceB { get; set; }
@@ -21,7 +20,6 @@ namespace Ch7StudioFunWithQuestions
         public ModifyActiveQuestion(string stateQuestion, string answerChoiceA, string answerChoiceB, string answerChoiceC, string answerChoiceD, string answer) : base(stateQuestion, answerChoiceA, answerChoiceB, answerChoiceC, answerChoiceD, answer)
         {
         }
-
         public static void ModifyActiveQuestionPartOne()
         {
             Console.WriteLine("**********");

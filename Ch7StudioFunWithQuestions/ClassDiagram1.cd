@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ch7StudioFunWithQuestions.AddQuestion">
+    <Position X="10.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AddQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ch7StudioFunWithQuestions.CheckboxQuestions">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAAAAAAAAAAC0AAAAAAAAAAAAAgAAAEA=</HashCode>
+      <FileName>CheckboxQuestions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ch7StudioFunWithQuestions.ModifyActiveQuestion">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAgCAAAAAAAAAAC0AAAAAAAAEAAAAgAAAAA=</HashCode>
+      <FileName>ModifyActiveQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ch7StudioFunWithQuestions.MultipleChoiceQuestions">
+    <Position X="1.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAAAAAAAAAAC0AACAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>MultipleChoiceQuestions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ch7StudioFunWithQuestions.PrintToConsole">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAABAAAAAAAAAAgA=</HashCode>
+      <FileName>PrintToConsole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ch7StudioFunWithQuestions.Questions">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAC0AAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Questions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ch7StudioFunWithQuestions.Quiz">
+    <Position X="12.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAYAAAAAAAAAAAIAAAQAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Quiz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ch7StudioFunWithQuestions.TrueFalseQuestions">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAACAIAAAAAC0AAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>TrueFalseQuestions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Program">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
